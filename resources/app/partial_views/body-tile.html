@@ -1,0 +1,31 @@
+<section class="body-tile">
+    <div class="tile-container" ng-repeat="product in resultData">
+        <div class="left-tile">
+            <a href="#" title="" class="img-info">
+                <img ng-src="./resources/images/T{{$index+1}}.jpg" alt="">
+            </a>
+            <div class="product-info">
+                <h3 class="product-name">{{product.p_name | uppercase}}</h3>
+                <p class="light-grey">style #: {{product.p_style}}</p>
+                <p class="light-grey">color: {{product.p_selected_color.name}}</p> 
+                <div class="mobile-info">
+                    <p class="light-grey">size: {{product.p_selected_size.code | uppercase}}</p>
+                    <p class="qty">QTY:<input type="number" ng-model='product.p_quantity' ng-pattern='/^[0-9]+$/'class="input-small"  min='1' max='10'/></p>
+                    <p class="price-offer" ng-if='product.p_originalprice != product.p_price'>{{product.p_originalprice | currency}}</p>                   
+                    <p class="price-info">{{(product.p_originalprice === p_price ) ? product.p_quantity * product.p_originalprice : product.p_quantity * product.p_price | currency}}</p>
+                </div>                            
+            </div>
+            <ul class="cart-options clear-left">
+                <li><a href="#" class="edit-info" ng-click='openModel(product.p_id)'>EDIT</a></li>
+                <li><a href="">X REMOVE</a></li>
+                <li><a href="">SAVE FOR LATER</a></li>
+            </ul>                        
+        </div>
+        <div class="right-tile">
+            <p class="sub-title">{{product.p_selected_size.code | uppercase}}</p>
+            <p class="sub-title"><input type="number" ng-model='product.p_quantity' ng-pattern='/^[0-9]+$/'class="input-small"  min='1' max='10'/></p>
+            <p class="price-offer" ng-if='product.p_originalprice != product.p_price'>{{product.p_originalprice | currency}}</p>
+            <p class="sub-title price-info">{{(product.p_originalprice === p_price ) ? product.p_quantity * product.p_originalprice : product.p_quantity * product.p_price | currency}}</p>
+        </div>
+    </div>   
+</section> 

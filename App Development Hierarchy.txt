@@ -1,0 +1,17 @@
+Some conventions or practices followed is documented below for better and quicker understanding or analysis or review:
+
+All Controllers Begin with "ctrl"
+
+All Services Begin with "ser"
+
+All Factories Begin with "factory"
+
+All Directives Begin with "directive"
+
+
+1) Application begins by loading "index.html"
+
+2) main-app.js instantiates angular application 
+
+
+

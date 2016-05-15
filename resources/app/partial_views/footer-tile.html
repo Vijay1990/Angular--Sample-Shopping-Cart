@@ -1,0 +1,44 @@
+<section class="footer-tile">
+    <div class="footer-left-tile">
+        <p class="highlight">Need Help or have questions?</p>
+        <p>Call Customer Service at 1-800-555-5555</p>
+        <p><a href="#" class="underline">Chat with one of our stylist</a></p>
+        <p><a href="#" class="underline">See return & excahnge policy</a></p>
+    </div>
+    <div class="footer-right-tile">
+        <form action="#" class="free-coupen" name="coupenSection">
+            <div class="label-group">
+                <label class="left-section">ENTER PROMOTION CODE OR GIFT CARD</label>
+                <div class="right-section">
+                    <input type="text" class="input-large" value="" ng-model="coupen" required/>
+                    <button type="submit" ng-disabled="coupenSection.$invalid" class="btn btn-white">APPLY</button>
+                </div>
+            </div>
+        </form>
+        <div class="total-calculation clear-left">
+            <div>
+                <p class="left-section highlight"> SUBTOTAL</p>
+                <p class="right-section">{{subTotal | currency}}</p>
+            </div>
+            <div>
+                <p class="left-section">PROMOTION CODE <span>{{percentage}}%</span> APPLIED</p>
+                <p class="right-section">-{{discount | currency}}</p>
+            </div>
+            <div>
+                <p class="left-section">ESTIMATED SHIPPING*<span class="help-text">Your Qualify for free shipping<br>because your order is over $50*</span>
+                </p>
+                <p class="right-section">FREE</p>
+            </div>
+            <div class="est-total">
+                <p class="left-section">ESTIMATED TOTAL
+                <span class="help-text">Tax will be applied during checkout</span>
+                <p class="right-section">{{subTotal - discount | currency}}</p>
+            </div>
+        </div>
+        <div class="checkout-info">
+            <button class="btn btn-blue">CHECKOUT</button>
+            <a href="#" title="" class="underline">CONTINUE SHOPPING</a>
+            <p class="terms help-text">Secure Checkout.Shopping is always safe & secure</p>
+        </div>
+    </div>
+</section>

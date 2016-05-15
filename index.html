@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">    
+    <title>Online Shopping App</title>
+    <meta name="author" content="vijay p">
+    <meta name="description" content="Online Shopping App using Angular JS">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+	<link rel="stylesheet" type="text/css" href="resources/css/cart-custom.css" />
+</head>
+
+<body>
+    <div class="cart-container" ng-app="ShopCart">
+        <dir-loading-mask ng-show = "turnLoadMask"></dir-loading-mask>        
+        <div class="cart-wrapper" ng-controller="ctrlApp">
+
+            <!-- Shopping Cart Header Section-->
+            <header-tile></header-tile>
+
+            <!-- Shopping Cart Body Section-->
+            <body-tile></body-tile>
+
+            <!-- Shopping Cart Body Section-->
+            <footer-tile></footer-tile>
+
+            <!--popup Template-->
+            <cart-model-popup></cart-model-popup>    
+
+        </div>
+    </div>
+    <script type="text/javascript" src="resources/scripts/libs/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="resources/scripts/libs/angular.min.js"></script>
+     
+    <!-- Module && Controller -->
+    <script type="text/javascript" src="resources/app/main-app.js"></script> 
+    <script type="text/javascript" src="resources/app/controller/ctrlApp.js"></script> 
+
+    <!-- Custom Directives-->   
+    <script type="text/javascript" src="resources/app/directives/directive-loadingMask.js"></script>    
+    <script type="text/javascript" src="resources/app/directives/directive-header-tile.js"></script>    
+    <script type="text/javascript" src="resources/app/directives/directive-body-tile.js"></script>    
+    <script type="text/javascript" src="resources/app/directives/directive-footer-tile.js"></script>    
+    <script type="text/javascript" src="resources/app/directives/directive-cart-model-popup.js"></script>
+    <!-- Factory--> 
+    <script type="text/javascript" src="resources/app/factory/factoryTriggerRestApi.js"></script>
+    <!-- Services-->     
+    <script type="text/javascript" src="resources/app/services/serLoadingMask.js"></script>
+</body>
+</html>

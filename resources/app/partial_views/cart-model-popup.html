@@ -1,0 +1,41 @@
+<div class="product-link-container">
+    <div class="product-link-wrapper">
+        <span class="product-close" ng-click='closePopup()'> X </span>
+        <div class="product-link-inner">                        
+            <div class="popup-tile-left">
+                <span>
+                    <img src="./resources/images/T{{modelDatas.p_id}}.jpg" alt="">
+                </span>
+            </div>
+            <div class="popup-tile-right">
+                <div class="right-container">
+                    <div class="top-tile">
+                        <p>{{modelDatas.p_name | uppercase}}</p>
+                        <p class="price-offer" ng-if='modelDatas.p_originalprice != modelDatas.p_price'>{{modelDatas.p_originalprice | currency}}</p>                   
+                        <p class="price-info">{{(modelDatas.p_originalprice === modelDatas.p_price ) ? modelDatas.p_originalprice : modelDatas.p_price | currency}}</p>
+                    </div>
+                    <div class="bottom-tile">
+                        <p class="color-info">{{modelDatas.p_name | uppercase}}</p>
+                        <span class="color" ng-repeat='color in modelDatas.p_available_options.colors' style = 'background-color: {{color.hexcode}}'></span>                        
+                        <div class="avilable-options">
+                            <span class="size-option">
+                                <select ng-model="updateInfo.editSize">
+                                  <option value="">SIZE</option> 
+                                  <option ng-selected="{{size.code == modelDatas.p_selected_size.code}}" ng-repeat='size in modelDatas.p_available_options.sizes' value="{{size.code}}">{{size.name | uppercase}}</option>                                     
+                                </select>
+                            </span>
+                            <span>
+                                <select ng-model="updateInfo.editQty">
+                                  <option value="">QTY</option>                                     
+                                  <option ng-repeat='i in [1,2,3,4,5,6,7,8,9,10]' value="{{i}}">QTY:{{i}}</option>                                     
+                                </select>
+                            </span>
+                            <button class="btn btn-blue" ng-click='updateDetails()'>EDIT</button>
+                            <a href="#" class="help-text underline">See product details</a>
+                        </div>
+                    </div>
+                </div>                            
+            </div>                        
+        </div>
+    </div>
+</div> 
